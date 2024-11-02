@@ -103,15 +103,14 @@ class Book(Product):
     """
 
     def __init__(self, title: str, price: float, author: str) -> None:
-        super().__init__(price=price)
-        self.title = title
+        super().__init__(name=title, price=price)
         self.author = author
 
     def get_price(self) -> float:
         return self.price
     
     def get_description(self) -> str:
-        return f"{self.__class__.__name__}: {self.title}, Author: {self.author}"
+        return f"{self.__class__.__name__}: {self.name}, Author: {self.author}"
     
 class Clothing(Product):
     """
